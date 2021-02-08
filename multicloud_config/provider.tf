@@ -20,6 +20,13 @@ provider "oci" {
   private_key_password = var.private_key_password
 }
 
+provider "aviatrix" {
+  controller_ip = var.controller_ip
+  username      = var.username
+  password      = var.password
+  version       = "2.17.2"
+}
+
 terraform {
   required_providers {
     oci = {

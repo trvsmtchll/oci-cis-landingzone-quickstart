@@ -31,6 +31,9 @@ security_admin_email_endpoint = "tmitchell@aviatrix.com"
 # private_subnet_app_cidr                         = "10.0.2.0/24" 
 # private_subnet_db_cidr                          = "10.0.3.0/24" 
 # public_src_lbr_cidr                             = "0.0.0.0/0" 
-cloud_guard_configuration_status                = "DISABLED" 
-cloud_guard_configuration_self_manage_resources = false 
+cloud_guard_configuration_status                = "DISABLED"
+cloud_guard_configuration_self_manage_resources = false
+
+##### Aviatrix Transit 
+# aviatrix_transit_cidr  = "10.0.10.0/24" 
 

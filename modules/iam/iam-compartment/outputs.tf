@@ -4,3 +4,8 @@
 output "compartments" {
   value = {for c in data.oci_identity_compartments.these.compartments : c.name => c}
 } 
+
+output "compartment_objects" {
+  description = "ocid of created VCN. "
+  value       = oci_identity_compartment.these
+}
