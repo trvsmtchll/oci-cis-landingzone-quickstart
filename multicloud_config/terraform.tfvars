@@ -34,9 +34,3 @@ security_admin_email_endpoint = "tmitchell@aviatrix.com"
 cloud_guard_configuration_status                = "DISABLED" 
 cloud_guard_configuration_self_manage_resources = false 
 
-/*
-Error: failed to create Aviatrix Transit Gateway: Rest API create_transit_gw Post failed: 
-Gateway initilization failed: Gateway:avx-us-ashburn-1-transit DNS check failed. 
-Please verify your cloud network DNS settings.
-*/
-
