@@ -14,14 +14,6 @@ home_region          = "us-ashburn-1"
 region_key    = "iad"
 service_label = "avx"
 
-/*TF_VAR_fingerprint=39:3c:e8:11:10:6a:36:72:44:00:73:0e:3b:a3:7f:35
-TF_VAR_user_ocid=ocid1.user.oc1..aaaaaaaahczj3lb3aekzhrzmseeogrlhzz4rpd467kzpwtzui5mkangr2tha
-TF_VAR_tenancy_ocid=ocid1.tenancy.oc1..aaaaaaaa7avyc4vh6q4qb2rrqazbxx4l3t6u4dnir45kovtjgyy6c7g75xaq
-TF_VAR_compartment_ocid=ocid1.tenancy.oc1..aaaaaaaa7avyc4vh6q4qb2rrqazbxx4l3t6u4dnir45kovtjgyy6c7g75xaq
-TF_VAR_private_key_path=/Users/travis/.oci/sessions/TMAVX/oci_api_key.pem
-TF_VAR_region=us-ashburn-1
-*/
-
 ### For Networking
 is_vcn_onprem_connected = false
 #onprem_cidr             = "192.168.1.10"
