@@ -1,6 +1,19 @@
 # Copyright (c) 2020 Oracle and/or its affiliates.
 # Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl.
 
+# Aviatrix
+variable "username" {}
+variable "controller_ip" {}
+variable "password" {}
+variable "aviatrix_transit_cidr" {
+  default = "10.0.20.0/24"
+}
+
+# From Region1
+#variable "security_compartment_id" {}
+#variable "appdev_compartment_id" {}
+#variable "network_compartment_id" {}
+
 # General
 variable "service_label" {
   validation {

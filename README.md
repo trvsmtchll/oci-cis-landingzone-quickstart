@@ -20,6 +20,11 @@ The template uses multiple compartments, groups, and IAM policies to segregate a
 - A reference implementation written in Terraform HCL (Hashicorp Language) that provisions fully functional resources in an OCI tenancy.
 - A Python script that performs compliance checks for most of the CIS OCI Foundations Benchmark recommendations. The script is completely independent of the Terraform code and can be used against any existing tenancy.
 
+## Enhancements
+- Support for 2 regions (region_1 and region_2)
+- Deployment of Aviatrix Transit VCN and High-Availability Gateway
+- [Remote state in OCI Object Storage](https://registry.terraform.io/providers/hashicorp/oci/latest/docs/guides/object_store_backend) delineation between the two regions _(Setup secret keys and bucket as a pre-req)_
+
  ## Architecture 
  The Terraform code deploys a standard three-tier network architecture within a single Virtual Cloud Network (VCN). The three tiers are divided into:
  

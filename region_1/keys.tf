@@ -20,7 +20,7 @@ module "cis_keys_policies" {
   source    = "../modules/vault/policies"
   providers = { oci = oci.home }
   policies = {
-    "${local.oss_key_name}-Policy" = {
+    "${local.oss_key_name}-${var.region_key}-Policy" = {
       compartment_id = var.tenancy_ocid
       description    = "Policy allowing OCI services to access ${module.cis_keys.keys[local.oss_key_name].display_name} in the Vault service."
       statements = [

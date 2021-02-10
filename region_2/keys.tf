@@ -4,7 +4,7 @@
 ### Creates a vault and multiple keys in the vault.
 module "cis_keys" {
   source         = "../modules/vault/keys"
-  compartment_id = module.cis_compartments.compartments[local.security_compartment_name].id
+  compartment_id = data.terraform_remote_state.compartments.outputs.r1_compartment_objects["${var.service_label}-Security"].id
   vault_name     = local.vault_name
   vault_type     = local.vault_type
   keys = {
@@ -20,7 +20,7 @@ module "cis_keys_policies" {
   source    = "../modules/vault/policies"
   providers = { oci = oci.home }
   policies = {
-    "${local.oss_key_name}-Policy" = {
+    "${local.oss_key_name}-${var.region_key}-Policy" = {
       compartment_id = var.tenancy_ocid
       description    = "Policy allowing OCI services to access ${module.cis_keys.keys[local.oss_key_name].display_name} in the Vault service."
       statements = [

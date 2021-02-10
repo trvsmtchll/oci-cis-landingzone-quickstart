@@ -1,0 +1,10 @@
+# Create an Aviatrix Transit GW
+module "aviatrix_oci_transit" {
+  source  = "terraform-aviatrix-modules/oci-transit/aviatrix"
+  version = "3.0.1"
+  region  = var.region
+  name    = var.service_label
+  ha_gw   = false
+  account = "CIS_OCI_Network2"
+  cidr    = var.aviatrix_transit_cidr
+}

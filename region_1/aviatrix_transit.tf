@@ -14,8 +14,6 @@ module "aviatrix_oci_transit" {
   version = "3.0.1"
   region  = var.region
   name    = var.service_label
-  ha_gw   = false
   account = aviatrix_account.oci_account.account_name
   cidr    = var.aviatrix_transit_cidr
 }
-

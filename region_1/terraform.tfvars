@@ -12,7 +12,7 @@ private_key_password = ""
 home_region          = "us-ashburn-1"
 #region               = "<tenancy_region>"
 region_key    = "iad"
-service_label = "avx"
+service_label = "DAS"
 
 ### For Networking
 is_vcn_onprem_connected = false
