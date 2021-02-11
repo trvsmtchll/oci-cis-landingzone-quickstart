@@ -6,6 +6,6 @@ output "compartments" {
 } 
 
 output "compartment_objects" {
-  description = "ocid of created VCN. "
+  description = "Compartment objects created"
   value       = oci_identity_compartment.these
 }
