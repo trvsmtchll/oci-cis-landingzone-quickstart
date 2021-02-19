@@ -21,10 +21,11 @@ provider "oci" {
 }
 
 provider "aviatrix" {
-  controller_ip = var.controller_ip
-  username      = var.username
-  password      = var.password
-  version       = "2.17.2"
+  controller_ip           = var.controller_ip
+  username                = var.username
+  password                = var.password
+  skip_version_validation = true
+  version                 = "2.18"
 }
 
 terraform {

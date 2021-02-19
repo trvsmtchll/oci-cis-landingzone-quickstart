@@ -6,9 +6,11 @@ variable "username" {}
 variable "controller_ip" {}
 variable "password" {}
 variable "aviatrix_transit_cidr" {
-  default = "10.0.10.0/24"
+  default = ""
 }
-
+variable "aviatrix_spoke_cidr" {
+  default = ""
+}
 
 # General
 variable "service_label" {

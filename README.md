@@ -14,16 +14,20 @@ The template uses multiple compartments, groups, and IAM policies to segregate a
 - Notifications
 - Object Storage
 
+**This** Landing Zone fork includes [Aviatrix](https://aviatrix.com/) providing encrypted Multi-Cloud connectivity with centralized visibility and control. An Aviatrix Controller is required, the controller can be launched from marketplace of your preferred CSP. Please review the Getting Started guide [here.](https://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html)
+
  ## Deliverables
  This repository encloses two deliverables:
 
 - A reference implementation written in Terraform HCL (Hashicorp Language) that provisions fully functional resources in an OCI tenancy.
 - A Python script that performs compliance checks for most of the CIS OCI Foundations Benchmark recommendations. The script is completely independent of the Terraform code and can be used against any existing tenancy.
 
-## Enhancements
-- Support for 2 regions (region_1 and region_2)
+## Notable Enhancements in this Fork
+- Support for 2 OCI regions (oci_region_1 and oci_region_2)
 - Deployment of Aviatrix Transit VCN and High-Availability Gateway
 - [Remote state in OCI Object Storage](https://registry.terraform.io/providers/hashicorp/oci/latest/docs/guides/object_store_backend) delineation between the two regions _(Setup secret keys and bucket as a pre-req)_
+- Deployment of Aviatrix Spoke
+- Details, Aviatrix pre-requisites, and instructions can be found in [oci_region_1](./oci_region_1)
 
  ## Architecture 
  The Terraform code deploys a standard three-tier network architecture within a single Virtual Cloud Network (VCN). The three tiers are divided into:
@@ -50,12 +54,14 @@ The resources are provisioned using a single user account with broad tenancy adm
 
 ## Executing Instructions
 
-- [Terraform Configuration](terraform.md)
+- [Terraform Instructions](./oci_region_1)
 - [Compliance Checking](compliance-script.md)
 
 ## Acknowledgements
 - Parts of the Terraform code reuses and adapts from [Oracle Terraform Modules](https://github.com/oracle-terraform-modules).
 - The Compliance Checking script builds on [Adi Zohar's showoci OCI Reporting tool](https://github.com/adizohar/showoci).
+- [Aviatrix OCI Transit Terraform module](https://registry.terraform.io/modules/terraform-aviatrix-modules/oci-transit/aviatrix/latest) is used in this fork.
+- [Aviatrix Terraform provider](https://registry.terraform.io/providers/AviatrixSystems/aviatrix/latest) is used to create Transit and Spokes enabling Multi-Cloud connectivity.
 
 ## Contributors
 - **Owners**: [Andre Correa](https://github.com/andrecorreaneto), [Josh Hammer](https://github.com/halimer)

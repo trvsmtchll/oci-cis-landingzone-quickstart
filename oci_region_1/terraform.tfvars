@@ -26,14 +26,15 @@ security_admin_email_endpoint = "tmitchell@aviatrix.com"
 ##### The commented variable assignments below are for variables with a default value in variables.tf.
 ##### For overriding the default values, uncomment the variable and provide an appropriate value.
 
-# vcn_cidr                                        = "10.0.0.0/16" 
-# public_subnet_cidr                              = "10.0.1.0/24" 
-# private_subnet_app_cidr                         = "10.0.2.0/24" 
-# private_subnet_db_cidr                          = "10.0.3.0/24" 
-# public_src_lbr_cidr                             = "0.0.0.0/0" 
+vcn_cidr                = "10.5.0.0/16"
+public_subnet_cidr      = "10.5.1.0/24"
+private_subnet_app_cidr = "10.5.2.0/24"
+private_subnet_db_cidr  = "10.5.3.0/24"
+#public_src_lbr_cidr                             = "0.0.0.0/0" 
 cloud_guard_configuration_status                = "DISABLED"
 cloud_guard_configuration_self_manage_resources = false
 
 ##### Aviatrix Transit 
-# aviatrix_transit_cidr  = "10.0.10.0/24" 
+aviatrix_transit_cidr = "10.10.1.0/24"
+aviatrix_spoke_cidr   = "10.5.20.0/24"
 

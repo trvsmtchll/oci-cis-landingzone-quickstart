@@ -17,12 +17,11 @@ module "cis_security_lists" {
       defined_tags   = null
       freeform_tags  = null
       ingress_rules  = null
-      egress_rules   = null
-      /*  
-      ingress_rules   = [{
+      #egress_rules   = null
+      /*ingress_rules   = [{
         stateless     = false
         protocol      = "6"
-        src           = var.public_src_bastion_cidr
+        src           = "0.0.0.0/0"
         src_type      = "CIDR_BLOCK"
         src_port      = null
         dst_port      = {
@@ -31,21 +30,67 @@ module "cis_security_lists" {
         }
         icmp_type     = null
         icmp_code     = null
-      }]
-      egress_rules    = [{
+      },
+      {
         stateless     = false
-        protocol      = "6"
-        dst           = var.private_subnet_app_cidr
-        dst_type      = "CIDR_BLOCK"
+        protocol      = "1"
+        src           = "0.0.0.0/0"
+        src_type      = "CIDR_BLOCK"
         src_port      = null
-        dst_port      = {
-          min = 22
-          max = 22
-        }
+        dst_port      = null
+        icmp_type     = "3"
+        icmp_code     = "4"
+      },
+      {
+        stateless     = false
+        protocol      = "1"
+        src           = var.public_subnet_cidr
+        src_type      = "CIDR_BLOCK"
+        src_port      = null
+        dst_port      = null
+        icmp_type     = "3"
+        icmp_code     = null
+      },
+      {
+        stateless     = false
+        protocol      = "all"
+        src           = "10.0.0.0/8"
+        src_type      = "CIDR_BLOCK"
+        src_port      = null
+        dst_port      = null
         icmp_type     = null
         icmp_code     = null
+      },
+      {
+        stateless     = false
+        protocol      = "all"
+        src           = "172.16.0.0/12"
+        src_type      = "CIDR_BLOCK"
+        src_port      = null
+        dst_port      = null
+        icmp_type     = null
+        icmp_code     = null
+      },
+      {
+        stateless     = false
+        protocol      = "all"
+        src           = "192.168.0.0/16"
+        src_type      = "CIDR_BLOCK"
+        src_port      = null
+        dst_port      = null
+        icmp_type     = null
+        icmp_code     = null
+      }]*/
+      egress_rules = [{
+        stateless = false
+        protocol  = "6"
+        dst       = "0.0.0.0/0"
+        dst_type  = "CIDR_BLOCK"
+        src_port  = null
+        dst_port  = null
+        icmp_type = null
+        icmp_code = null
       }]
-    */
     },
     (local.private_subnet_app_security_list_name) = {
       compartment_id = null

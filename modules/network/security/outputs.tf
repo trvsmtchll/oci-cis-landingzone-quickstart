@@ -9,6 +9,12 @@ output "security_lists" {
   }
 }
 
+output "security_list_objects" {
+  description = "Security list objects."
+  value = oci_core_security_list.these
+}
+
+
 output "nsgs" {
   description = "The Network Security Group(s) (NSGs) created/managed."
   value = {

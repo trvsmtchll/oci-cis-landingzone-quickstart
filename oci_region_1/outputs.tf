@@ -10,5 +10,5 @@ output "r1_aviatrix_transit_gw" {
 
 output "r1_subnet_objects" {
   description = "The managed subnet objects."
-  value = module.cis_vcn.subnet_objects
+  value       = module.cis_vcn.subnet_objects
 }
